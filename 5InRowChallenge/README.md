@@ -85,13 +85,13 @@ application properties of game server. The default size is 6x9 and default win c
 Player needs to be login to play game. Player clicks the Login button.
 
 <p align="center">
-<align="center"><img src="images/player1_login.png" width="300">
+<align="center"><img src="images/david_login.png" width="300">
   
 A login window will pop up. Player input player name. If the player name is not found, it will be automatically registered to the game server. Player 1 username and player 2
 username have to be different. 
 
 <p align="center">
-<align="center"><img src="images/player2_login.png" width="300">
+<align="center"><img src="images/jame_login.png" width="300">
   
 #### Step 2. Player creates new game
 Player is allowed to create a new game. Please click on the **New Game** button. A new game is then loaded and shown in the game window. Assume that player 1 (David) creates a new game. A new game is loaded as shown in the image below.
