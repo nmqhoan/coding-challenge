@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import java.awt.*;
 import java.awt.event.*;
 import java.time.Instant;
+import java.util.Random;
 import javax.swing.*;
 import javax.swing.text.*;
 
@@ -52,12 +53,25 @@ public class GamePanel extends JFrame
 
     public GamePanel(String title) {
         this.setTitle(title);
+        centerFrame();
         gameService = new GameService();
         playerService = new PlayerService();
         moveService = new MoveService();
         gameBoardService = new GameBoardService();
         socketClient = new SocketClient(this);
         initComponents();
+
+    }
+
+    private void centerFrame() {
+//        setLocationRelativeTo(null);
+        Dimension windowSize = getSize();
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        Point centerPoint = ge.getCenterPoint();
+        Random random = new Random();
+        int dx = centerPoint.x - windowSize.width / 2;
+        int dy = centerPoint.y - windowSize.height / 2;
+        setLocation(dx + random.nextInt(200), dy + random.nextInt(200));
     }
 
     /** This method is called from within the constructor to
