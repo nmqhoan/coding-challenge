@@ -79,5 +79,36 @@ The game starts with two windows which illustrate for 2 game player. The board g
 application properties of game server. The default size is 6x9 and default win count is 5.
 
 <p align="center">
-[<align="center"><img src="images/game_client.png" width="550">](images/game_client.png)
+<align="center"><img src="images/game_client.png" width="550">
 
+#### Step 1. Player 1 and 2 login
+Player needs to be login to play game. Player clicks the Login button.
+
+<p align="center">
+<align="center"><img src="images/player1_login.png" width="300">
+  
+A login window will pop up. Player input player name. If the player name is not found, it will be automatically registered to the game server. Player 1 username and player 2
+username have to be different. 
+
+<p align="center">
+<align="center"><img src="images/player2_login.png" width="300">
+  
+#### Step 2. Player creates new game
+Player is allowed to create a new game. Please click on the **New Game** button. A new game is then loaded and shown in the game window. Assume that player 1 (David) creates a new game. A new game is loaded as shown in the image below.
+
+<p align="center">
+<align="center"><img src="images/new_game.png" width="700">
+
+#### Step 3. Player joins game.
+Player is also allowed to join exisiting game that was created by other player. A new pop up window will shown with a list of existing games with the first player name. Player will select the game that player want to join and click **OK**. The image below illustrates a player 1 joins a game that was already created by player 2.
+
+<p align="center">
+<align="center"><img src="images/join_game.png" width="400">
+
+#### Step 4. Input move
+When a game has two joined players, it can be started. Player can create a move by inputing the column number in the Move text box as follows.
+
+<p align="center">
+<align="center"><img src="images/move.png" width="300">
+
+Press **Enter** to mave a move. Whenever one of two players makes a move, a new game status will be shown on the game screen to notify the player.
