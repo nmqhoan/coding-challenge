@@ -75,7 +75,7 @@ java -jar target/*.jar
 
 ## Play game
 
-The game starts with two windows which illustrate for 2 game player. The board game size is configurable at the 
+The game starts with two windows which illustrate for 2 game players. The board game size is configurable at the 
 application properties of game server. The default size is 6x9 and default win count is 5.
 
 <p align="center">
@@ -87,14 +87,14 @@ Player needs to be login to play game. Player clicks the Login button.
 <p align="center">
 <align="center"><img src="images/david_login.png" width="300">
   
-A login window will pop up. Player input player name. If the player name is not found, it will be automatically registered to the game server. Player 1 username and player 2
+A login window will pop up. Player inputs player name. If the player name is not found, it will be automatically registered to the game server. Player 1 username and player 2
 username have to be different. 
 
 <p align="center">
 <align="center"><img src="images/jame_login.png" width="300">
   
 #### Step 2. Player creates new game
-Player is allowed to create a new game. Please click on the **New Game** button. A new game is then loaded and shown in the game window. Assume that player 1 (David) creates a new game. A new game is loaded as shown in the image below.
+Player is allowed to create a new game. Please click on the **New Game** button. A new game is then loaded and í shown in the game window. Assume that player 1 (David) creates a new game. A new game is loaded as in the image below.
 
 <p align="center">
 <align="center"><img src="images/new_game.png" width="700">
@@ -109,6 +109,6 @@ Player is also allowed to join exisiting game that was created by other player. 
 When a game has two joined players, it can be started. Player can create a move by inputing the column number in the Move text box as follows.
 
 <p align="center">
-<align="center"><img src="images/move.png" width="300">
+<align="center"><img src="images/move.png" width="400">
 
 Press **Enter** to mave a move. Whenever one of two players makes a move, a new game status will be shown on the game screen to notify the player.
