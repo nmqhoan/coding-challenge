@@ -41,9 +41,6 @@ class TicketResourceTest {
     private TicketRepository ticketRepository;
 
     @Autowired
-    private TicketService ticketService;
-
-    @Autowired
     private MockMvc restTicketMockMvc;
 
     private Ticket ticket;
@@ -51,8 +48,6 @@ class TicketResourceTest {
     /**
      * Create an ticket entity for this test.
      *
-     * This is a static method, as tests for other entities might also need it,
-     * if they test an entity which requires the current entity.
      */
     public static Ticket createEntity() {
         List<int[]> tests = new ArrayList<int[]>(){{
