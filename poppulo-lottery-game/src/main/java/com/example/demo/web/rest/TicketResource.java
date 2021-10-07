@@ -43,6 +43,35 @@ public class TicketResource {
 	}
 
 	/**
+	 * {@code GET  /ticket/} : return all tickets.
+	 *
+	 * @return list of tickets
+	 */
+	@GetMapping(value = "/ticket")
+	public List<Ticket> getAllTickets() {
+		log.debug("REST request to get all tickets");
+		return ticketService.findAll();
+	}
+
+	/**
+	 * {@code GET  /ticket/:id} : get the "id" ticket.
+	 *
+	 * @param id the id of the ticket to retrieve.
+	 * @return the ticket, or with status {@code 404 (Not Found)}.
+	 */
+	@GetMapping(value = "/ticket/{id}")
+	public Ticket getTicket(@PathVariable Long id) {
+		log.debug("REST request to get Ticket : {}", id);
+		Optional<Ticket> ticket = ticketService.findOne(id);
+		if(ticket.isPresent())
+			return ticket.get();
+		else {
+			log.debug("Ticket with id {} not found", id);
+			throw new TicketNotFoundException("Ticket not found");
+		}
+	}
+
+	/**
 	 *
 	 * @param id the id of the ticket to update
 	 * @param numOfLine the new number of line to be added to the ticket
@@ -63,35 +92,6 @@ public class TicketResource {
 				throw new TicketCheckedException("Ticket was already checked. It can not be amended");
 			}
 		}
-		else {
-			log.debug("Ticket with id {} not found", id);
-			throw new TicketNotFoundException("Ticket not found");
-		}
-	}
-
-	/**
-	 * {@code GET  /ticket/} : return all tickets.
-	 *
- 	 * @return list of tickets
-	 */
-	@GetMapping(value = "/ticket")
-	public List<Ticket> getAllTickets() {
-		log.debug("REST request to get all tickets");
-		return ticketService.findAll();
-	}
-
-	/**
-	 * {@code GET  /ticket/:id} : get the "id" ticket.
-	 *
-	 * @param id the id of the ticket to retrieve.
-	 * @return the ticket, or with status {@code 404 (Not Found)}.
-	 */
-	@GetMapping(value = "/ticket/{id}")
-	public Ticket getTicket(@PathVariable Long id) {
-		log.debug("REST request to get Ticket : {}", id);
-		Optional<Ticket> ticket = ticketService.findOne(id);
-		if(ticket.isPresent())
-			return ticket.get();
 		else {
 			log.debug("Ticket with id {} not found", id);
 			throw new TicketNotFoundException("Ticket not found");
