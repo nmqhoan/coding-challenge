@@ -38,8 +38,8 @@ public class TicketResource {
 			throw new BadRequestException("Invalid request");
 		}
 		Ticket ticket = ticketService.generateTicket(numOfLine);
-		Ticket result = ticketService.save(ticket);
-		return result;
+		ticket = ticketService.save(ticket);
+		return ticket;
 	}
 
 	/**

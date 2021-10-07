@@ -5,21 +5,19 @@ import com.example.demo.domain.Ticket;
 import com.example.demo.repository.TicketRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static junit.framework.TestCase.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 class TicketServiceImplTest {
     @InjectMocks
     private TicketServiceImpl ticketService;
@@ -31,8 +29,7 @@ class TicketServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.initMocks(this);
-        ticketService = new TicketServiceImpl(ticketRepository);
+        MockitoAnnotations.openMocks(this);
         ticket = ticketService.generateTicket(DEFAULT_NUM_OF_LINES);
     }
 
@@ -41,7 +38,7 @@ class TicketServiceImplTest {
         Ticket gotTicket = ticketService.generateTicket(DEFAULT_NUM_OF_LINES);
         assertNotNull(gotTicket);
         assertEquals(gotTicket.getLines().size(),DEFAULT_NUM_OF_LINES);
-        assertEquals(gotTicket.isChecked(),false);
+        assertFalse(gotTicket.isChecked());
     }
 
     @Test

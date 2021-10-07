@@ -16,7 +16,7 @@ public interface TicketService {
 
     Ticket generateTicket(int numOfLine);
 
-    public Line generateLine();
+    Line generateLine();
 
     List<Ticket> findAll();
 }

@@ -40,10 +40,6 @@ public class Ticket implements Serializable {
 		return lines;
 	}
 
-	public void setLines(List<Line> lines) {
-		this.lines = lines;
-	}
-
 	public boolean isChecked() {
 		return isChecked;
 	}
