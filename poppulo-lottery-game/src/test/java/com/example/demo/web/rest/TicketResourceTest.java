@@ -4,7 +4,6 @@ import com.example.demo.configuration.ApplicationProperties;
 import com.example.demo.domain.Line;
 import com.example.demo.domain.Ticket;
 import com.example.demo.repository.TicketRepository;
-import com.example.demo.service.TicketService;
 import com.example.demo.web.rest.errors.BadRequestException;
 import com.example.demo.web.rest.errors.TicketCheckedException;
 import com.example.demo.web.rest.errors.TicketNotFoundException;
